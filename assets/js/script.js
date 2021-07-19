@@ -12,10 +12,11 @@ function todaysDate(){
 }
 // * populate container with planner date elements
 var dateCounter = 0;
-var container_tag = '<div class="row"><div class="col">Date</div><div class="col">Event</div><div class="col">Filler</div></div>';
+var container_tag = '<div class="row"><h3 class="col">Date</h3><h3 class="col">Event</h3><h3 class="col">Filler</h3></div>'
++'';
 
 for(i=0; i < 7; i++){
-    container_tag += '<div class="row"><div class="col">'+moment().day(i).date()+'</div><div class="col">test</div><div class="col">test</div></div>'
+    container_tag += '<div class="row"><div class="col">'+moment().day(i).date()+'</div><div class="col">placeHolder</div><div class="col">PlaceHolder</div></div>'
     container_el.innerHTML = container_tag;
 }
 
