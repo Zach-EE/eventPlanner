@@ -1,8 +1,8 @@
 var currentDay_el = document.getElementById("currentDay");
 var container_el = document.querySelector(".container");
 
-console.log(currentDay_el.textContent);
 
+var time = moment();
 //Display Todays Date info in page banner
 function todaysDate(){
     counter = setInterval(timer, 1000);
