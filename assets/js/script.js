@@ -1,6 +1,6 @@
 var currentDay_el = document.getElementById("currentDay");
-var container_el = document.querySelector(".container");
-
+var container_el = document.querySelector(".container-md");
+var containerHeader = document.querySelector(".container-header");
 console.log(currentDay_el.textContent);
 
 function todaysDate(){
@@ -12,15 +12,20 @@ function todaysDate(){
 }
 // * populate container with planner date elements
 var dateCounter = 0;
-var container_tag = '<div class="row"><h3 class="col">Date</h3><h3 class="col">Event</h3><h3 class="col">Filler</h3></div>'
-+'';
-
-for(i=0; i < 7; i++){
-    container_tag += '<div class="row"><div class="col">'+moment().day(i).date()+'</div><div class="col">placeHolder</div><div class="col">PlaceHolder</div></div>'
+var container_tag = ""
+function init(){
+    var contHeader_tag ='whoop whoop' +moment().week();
+    container_tag += '<li class="list-group-item"><div class="row"><h4 class="col date_tag">Sun - '+moment().day(0).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'
+    +'<li class="list-group-item"><div class="row"><h4 class="col date_tag">Mon - '+moment().day(1).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'
+    +'<li class="list-group-item"><div class="row"><h4 class="col date_tag">Tue - '+moment().day(2).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'+
+    '<li class="list-group-item"><div class="row"><h4 class="col date_tag">Wed - '+moment().day(3).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'
+    +'<li class="list-group-item"><div class="row"><h4 class="col date_tag">Thu - '+moment().day(4).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'
+    +'<li class="list-group-item"><div class="row"><h4 class="col date_tag">Fri - '+moment().day(5).date()+'</h4><div class="col event_tag">Event<div></div></div></li>'
+    +'<li class="list-group-item"><div class="row"><h4 class="col date_tag">Sat - '+moment().day(6).date()+'</h4><div class="col event_tag">Event<div></div></div></li>';
     container_el.innerHTML = container_tag;
 }
 
-console.log(container_tag);
+
 
 todaysDate();
-
+init()
