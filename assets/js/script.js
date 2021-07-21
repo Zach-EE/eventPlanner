@@ -2,15 +2,15 @@ console.log("Loaded");
 
 var currentDay_el = document.getElementById("currentDay");
 var container_el = document.querySelector(".container");
-var hr0900 = $("#0900");
-var hr1000 = $("#1000");
-var hr1100 = $("#1100");
-var hr1200 = $("#1200");
-var hr1300 = $("#1300");
-var hr1400 = $("#1400");
-var hr1500 = $("#1500");
-var hr1600 = $("#1600");
-var hr1700 = $("#1700");
+var hr0900 = $("#09");
+var hr1000 = $("#10");
+var hr1100 = $("#11");
+var hr1200 = $("#12");
+var hr1300 = $("#13");
+var hr1400 = $("#14");
+var hr1500 = $("#15");
+var hr1600 = $("#16");
+var hr1700 = $("#17");
 var saveBtn =$(".saveBtn");
 
 var time = moment();
@@ -33,9 +33,13 @@ init();
 function timeColor() {
     hour = time.hours();
     $(".time-block").each(function () {
-        var timeNow = parseInt($(this).attr("id"))
+        var timeNow = parseInt($(this).attr("id"));
         if (timeNow > hour){
-            $(this).addClass("future")
+            $(this).addClass("future");
+        }else if (timeNow === hour){
+            $(this).addClass("present");
+        }else{
+            $(this).addClass("past")
         }
     })
 }
