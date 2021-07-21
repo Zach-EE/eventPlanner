@@ -30,6 +30,7 @@ function init(){
 
 init();
 
+//* Function to change background color to indicate time of day
 function timeColor() {
     hour = time.hours();
     $(".time-block").each(function () {
@@ -45,3 +46,10 @@ function timeColor() {
 }
 
 timeColor();
+
+saveBtn.on("click", function (){
+    var time = $(this).parent().attr("id");
+    var schedule = $(this).siblings(".schedule").val();
+    localStorage.setItem(time,schedule);
+    alert("Event Saved to Calendar");
+});
